@@ -46,12 +46,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Hotels</title>
 </head>
 <body>
     <main>
         <h1>HOTELS:</h1>
-        <ul>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Parking</th>
+                <th>Vote</th>
+                <th>Distance to center</th>
+            </tr>
             <?php
                 for($i = 0; $i < count($hotels); $i++){
 
@@ -71,20 +79,18 @@
                     // var_dump($hotel);
 
                     ?>
-                    <li>
-                        <ul>
-                            <li><h3>Name: </h3><?php echo $name ?></li>
-                            <li><h3>Description: </h3><?php echo $description ?></li>
-                            <li><h3>Parking: </h3><?php echo $parking ?></li>
-                            <li><h3>Vote: </h3><?php echo $vote ?></li>
-                            <li><h3>Distance to center: </h3><?php echo $distance_to_center ?>km</li>
-                        </ul>
-                    </li>
+                    <tr>
+                        <td><?php echo $name ?></td>
+                        <td><?php echo $description ?></td>
+                        <td><?php echo $parking ?></td>
+                        <td><?php echo $vote ?></td>
+                        <td><?php echo $distance_to_center ?>km</td>
+                    </tr>
                     <?php
             
                 }
             ?>
-        </ul>
+        </table>
     </main>
 </body>
 </html>
