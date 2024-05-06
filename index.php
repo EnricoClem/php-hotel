@@ -59,7 +59,12 @@
             
                     $name = $hotel['name'];
                     $description = $hotel['description'];
-                    $parking = $hotel['parking'];
+                    // $parking = $hotel['parking'];
+                    if($hotel['parking'] === true){
+                        $parking = 'There is parking';
+                    }else{
+                        $parking = 'There is no parking';
+                    }
                     $vote = $hotel['vote'];
                     $distance_to_center = $hotel['distance_to_center'];
             
