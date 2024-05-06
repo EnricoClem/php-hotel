@@ -40,4 +40,18 @@
 
     ];
 
+    for($i = 0; $i < count($hotels); $i++){
+
+        $hotel = $hotels[$i];
+
+        $name = $hotel['name'];
+        $description = $hotel['description'];
+        $parking = $hotel['parking'];
+        $vote = $hotel['vote'];
+        $distance_to_center = $hotel['distance_to_center'];
+
+        var_dump($hotel);
+
+    }
+
 ?>
