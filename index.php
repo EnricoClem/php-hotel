@@ -50,46 +50,61 @@
     <title>Hotels</title>
 </head>
 <body>
-    <main>
-        <h1>HOTELS:</h1>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Parking</th>
-                <th>Vote</th>
-                <th>Distance to center</th>
-            </tr>
-            <?php
-                for($i = 0; $i < count($hotels); $i++){
+    <header class="bg-primary p-2">
+        <div class="container-md text-white">
+            <h1>FindMyHotel</h1>
+        </div>
+    </header>
+    <main class="container-sm p-3">
+        <table class="table">
+            <thead>
+                <tr class="table-primary">
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Parking</th>
+                    <th>Vote</th>
+                    <th>Distance to center</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    for($i = 0; $i < count($hotels); $i++){
 
-                    $hotel = $hotels[$i];
-            
-                    $name = $hotel['name'];
-                    $description = $hotel['description'];
-                    // $parking = $hotel['parking'];
-                    if($hotel['parking'] === true){
-                        $parking = 'There is parking';
-                    }else{
-                        $parking = 'There is no parking';
+                        $hotel = $hotels[$i];
+                
+                        $name = $hotel['name'];
+                        $description = $hotel['description'];
+                        // $parking = $hotel['parking'];
+                        if($hotel['parking'] === true){
+                            $parking = '&#x2714';
+                        }else{
+                            $parking = '&#x2718';
+                        }
+                        $vote = $hotel['vote'];
+                        $distance_to_center = $hotel['distance_to_center'];
+                
+                        // var_dump($hotel);
+
+                        ?>
+                        <tr class="<?php
+                            if($i % 2 !== 0){
+                                ?>
+                                table-secondary
+                                <?php
+                            }
+                        ?>"> 
+                            <td><?php echo $name ?></td>
+                            <td><?php echo $description ?></td>
+                            <td><?php echo $parking ?></td>
+                            <td><?php echo $vote ?></td>
+                            <td><?php echo $distance_to_center ?>km</td>
+                        </tr>
+                        <?php
+                
                     }
-                    $vote = $hotel['vote'];
-                    $distance_to_center = $hotel['distance_to_center'];
-            
-                    // var_dump($hotel);
+                ?>                
+            </tbody>
 
-                    ?>
-                    <tr>
-                        <td><?php echo $name ?></td>
-                        <td><?php echo $description ?></td>
-                        <td><?php echo $parking ?></td>
-                        <td><?php echo $vote ?></td>
-                        <td><?php echo $distance_to_center ?>km</td>
-                    </tr>
-                    <?php
-            
-                }
-            ?>
         </table>
     </main>
 </body>
