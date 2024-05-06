@@ -40,18 +40,46 @@
 
     ];
 
-    for($i = 0; $i < count($hotels); $i++){
-
-        $hotel = $hotels[$i];
-
-        $name = $hotel['name'];
-        $description = $hotel['description'];
-        $parking = $hotel['parking'];
-        $vote = $hotel['vote'];
-        $distance_to_center = $hotel['distance_to_center'];
-
-        var_dump($hotel);
-
-    }
-
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels</title>
+</head>
+<body>
+    <main>
+        <h1>HOTELS:</h1>
+        <ul>
+            <?php
+                for($i = 0; $i < count($hotels); $i++){
+
+                    $hotel = $hotels[$i];
+            
+                    $name = $hotel['name'];
+                    $description = $hotel['description'];
+                    $parking = $hotel['parking'];
+                    $vote = $hotel['vote'];
+                    $distance_to_center = $hotel['distance_to_center'];
+            
+                    // var_dump($hotel);
+
+                    ?>
+                    <li>
+                        <ul>
+                            <li><h3>Name: </h3><?php echo $name ?></li>
+                            <li><h3>Description: </h3><?php echo $description ?></li>
+                            <li><h3>Parking: </h3><?php echo $parking ?></li>
+                            <li><h3>Vote: </h3><?php echo $vote ?></li>
+                            <li><h3>Distance to center: </h3><?php echo $distance_to_center ?>km</li>
+                        </ul>
+                    </li>
+                    <?php
+            
+                }
+            ?>
+        </ul>
+    </main>
+</body>
+</html>
