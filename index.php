@@ -74,12 +74,7 @@
                 
                         $name = $hotel['name'];
                         $description = $hotel['description'];
-                        // $parking = $hotel['parking'];
-                        if($hotel['parking'] === true){
-                            $parking = '&#x2714';
-                        }else{
-                            $parking = '&#x2718';
-                        }
+                        $parking = $hotel['parking'];
                         $vote = $hotel['vote'];
                         $distance_to_center = $hotel['distance_to_center'];
                 
@@ -95,7 +90,7 @@
                         ?>"> 
                             <td><?php echo $name ?></td>
                             <td><?php echo $description ?></td>
-                            <td><?php echo $parking ?></td>
+                            <td><?php echo $parking === true ? '&#x2714' : '&#x2718'; ?></td>
                             <td><?php echo $vote ?></td>
                             <td><?php echo $distance_to_center ?>km</td>
                         </tr>
